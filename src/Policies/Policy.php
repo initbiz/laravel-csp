@@ -120,7 +120,7 @@ abstract class Policy
 
                 return empty($valueString) ? "{$directive}" : "{$directive} {$valueString}";
             })
-            ->implode(';');
+            ->implode('; ');
     }
 
     protected function guardAgainstInvalidDirectives(string $directive)
