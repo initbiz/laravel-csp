@@ -1,1 +1,0 @@
-<script @nonce></script>

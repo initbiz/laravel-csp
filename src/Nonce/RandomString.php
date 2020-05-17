@@ -1,6 +1,6 @@
 <?php
 
-namespace OFFLINE\Csp\Nonce;
+namespace OFFLINE\LaravelCSP\Nonce;
 
 use Illuminate\Support\Str;
 

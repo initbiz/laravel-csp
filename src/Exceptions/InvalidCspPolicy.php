@@ -1,9 +1,9 @@
 <?php
 
-namespace OFFLINE\Csp\Exceptions;
+namespace OFFLINE\LaravelCSP\Exceptions;
 
 use Exception;
-use OFFLINE\Csp\Policies\Policy;
+use OFFLINE\LaravelCSP\Policies\Policy;
 
 class InvalidCspPolicy extends Exception
 {

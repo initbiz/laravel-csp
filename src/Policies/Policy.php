@@ -1,16 +1,16 @@
 <?php
 
-namespace OFFLINE\Csp\Policies;
+namespace OFFLINE\LaravelCSP\Policies;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use ReflectionClass;
-use OFFLINE\Csp\Directive;
-use OFFLINE\Csp\Exceptions\InvalidDirective;
-use OFFLINE\Csp\Exceptions\InvalidValueSet;
-use OFFLINE\Csp\Keyword;
-use OFFLINE\Csp\Value;
+use OFFLINE\LaravelCSP\Directive;
+use OFFLINE\LaravelCSP\Exceptions\InvalidDirective;
+use OFFLINE\LaravelCSP\Exceptions\InvalidValueSet;
+use OFFLINE\LaravelCSP\Keyword;
+use OFFLINE\LaravelCSP\Value;
 use Symfony\Component\HttpFoundation\Response;
 
 abstract class Policy
@@ -25,10 +25,10 @@ abstract class Policy
      * @param string $directive
      * @param string|array|bool $values
      *
-     * @return \OFFLINE\Csp\Policies\Policy
+     * @return \OFFLINE\LaravelCSP\Policies\Policy
      *
-     * @throws \OFFLINE\Csp\Exceptions\InvalidDirective
-     * @throws \OFFLINE\Csp\Exceptions\InvalidValueSet
+     * @throws \OFFLINE\LaravelCSP\Exceptions\InvalidDirective
+     * @throws \OFFLINE\LaravelCSP\Exceptions\InvalidValueSet
      */
     public function addDirective(string $directive, $values): self
     {

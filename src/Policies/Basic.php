@@ -1,9 +1,9 @@
 <?php
 
-namespace OFFLINE\Csp\Policies;
+namespace OFFLINE\LaravelCSP\Policies;
 
-use OFFLINE\Csp\Directive;
-use OFFLINE\Csp\Keyword;
+use OFFLINE\LaravelCSP\Directive;
+use OFFLINE\LaravelCSP\Keyword;
 
 class Basic extends Policy
 {

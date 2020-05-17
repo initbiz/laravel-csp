@@ -35,7 +35,7 @@ composer require OFFLINE/laravel-csp
 You can publish the config-file with:
 
 ```bash
-php artisan vendor:publish --provider="OFFLINE\Csp\CspServiceProvider" --tag="config"
+php artisan vendor:publish --provider="OFFLINE\LaravelCSP\CspServiceProvider" --tag="config"
 ```
 
 This is the contents of the file which will be published at `config/csp.php`:
@@ -45,9 +45,9 @@ return [
 
     /*
      * A policy will determine which CSP headers will be set. A valid CSP policy is
-     * any class that extends `OFFLINE\Csp\Policies\Policy`
+     * any class that extends `OFFLINE\LaravelCSP\Policies\Policy`
      */
-    'policy' => OFFLINE\Csp\Policies\Basic::class,
+    'policy' => OFFLINE\LaravelCSP\Policies\Basic::class,
 
     /*
      * This policy which will be put in report only mode. This is great for testing out
@@ -71,11 +71,11 @@ return [
     /*
      * The class responsible for generating the nonces used in inline tags and headers.
      */
-    'nonce_generator' => OFFLINE\Csp\Nonce\RandomString::class,
+    'nonce_generator' => OFFLINE\LaravelCSP\Nonce\RandomString::class,
 ];
 ```
 
-You can add CSP headers to all responses of your app by registering `OFFLINE\Csp\AddCspHeaders::class` in the http kernel.
+You can add CSP headers to all responses of your app by registering `OFFLINE\LaravelCSP\AddCspHeaders::class` in the http kernel.
 
 ```php
 // app/Http/Kernel.php
@@ -85,7 +85,7 @@ You can add CSP headers to all responses of your app by registering `OFFLINE\Csp
 protected $middlewareGroups = [
    'web' => [
        ...
-       \OFFLINE\Csp\AddCspHeaders::class,
+       \OFFLINE\LaravelCSP\AddCspHeaders::class,
    ],
 ```
  
@@ -93,14 +93,14 @@ Alternatively you can apply the middleware on the route or route group level.
 
 ```php
 // in a routes file
-Route::get('my-page', 'MyController')->middleware(OFFLINE\Csp\AddCspHeaders::class);
+Route::get('my-page', 'MyController')->middleware(OFFLINE\LaravelCSP\AddCspHeaders::class);
 ```
 
 You can also pass a policy class as a parameter to the middleware:
  
 ```php
 // in a routes file
-Route::get('my-page', 'MyController')->middleware(OFFLINE\Csp\AddCspHeaders::class . ':' . MyPolicy::class);
+Route::get('my-page', 'MyController')->middleware(OFFLINE\LaravelCSP\AddCspHeaders::class . ':' . MyPolicy::class);
 ``` 
 
 The given policy will override the one configured in the config file for that specific route or group of routes.
@@ -154,13 +154,13 @@ Content-Security-Policy: upgrade-insecure-requests;block-all-mixed-content
 
 ### Creating policies
 
-In the `policy` key of the `csp` config file is set to `\OFFLINE\Csp\Policies\Basic::class` by default. This class allows your site to only use images, scripts, form actions of your own site. This is how the class looks like.
+In the `policy` key of the `csp` config file is set to `\OFFLINE\LaravelCSP\Policies\Basic::class` by default. This class allows your site to only use images, scripts, form actions of your own site. This is how the class looks like.
 
 ```php
-namespace OFFLINE\Csp\Policies;
+namespace OFFLINE\LaravelCSP\Policies;
 
-use OFFLINE\Csp\Directive;
-use OFFLINE\Csp\Value;
+use OFFLINE\LaravelCSP\Directive;
+use OFFLINE\LaravelCSP\Value;
 
 class Basic extends Policy
 {
@@ -187,8 +187,8 @@ You can allow fetching scripts from `www.google.com` by extending this class:
 ```php
 namespace App\Services\Csp\Policies;
 
-use OFFLINE\Csp\Directive;
-use OFFLINE\Csp\Policies\Basic;
+use OFFLINE\LaravelCSP\Directive;
+use OFFLINE\LaravelCSP\Policies\Basic;
 
 class MyCustomPolicy extends Basic
 {

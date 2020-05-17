@@ -1,9 +1,9 @@
 <?php
 
-namespace OFFLINE\Csp;
+namespace OFFLINE\LaravelCSP;
 
-use OFFLINE\Csp\Exceptions\InvalidCspPolicy;
-use OFFLINE\Csp\Policies\Policy;
+use OFFLINE\LaravelCSP\Exceptions\InvalidCspPolicy;
+use OFFLINE\LaravelCSP\Policies\Policy;
 
 class PolicyFactory
 {

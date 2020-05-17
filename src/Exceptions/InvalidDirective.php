@@ -1,6 +1,6 @@
 <?php
 
-namespace OFFLINE\Csp\Exceptions;
+namespace OFFLINE\LaravelCSP\Exceptions;
 
 use Exception;
 

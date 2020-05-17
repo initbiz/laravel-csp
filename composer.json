@@ -36,12 +36,7 @@
     },
     "autoload": {
         "psr-4": {
-            "OFFLINE\\Csp\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "OFFLINE\\Csp\\Tests\\": "tests"
+            "OFFLINE\\LaravelCSP\\": "src"
         }
     },
     "scripts": {

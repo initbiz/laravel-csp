@@ -1,6 +1,6 @@
 <?php
 
-namespace OFFLINE\Csp;
+namespace OFFLINE\LaravelCSP;
 
 abstract class Keyword
 {
