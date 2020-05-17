@@ -21,6 +21,8 @@ abstract class Directive
     const OBJECT = 'object-src';
     const PLUGIN = 'plugin-types';
     const REPORT = 'report-uri';
+    const REPORT_TO = 'report-to';
+    const PREFETCH = 'prefetch-src';
     const SANDBOX = 'sandbox';
     const SCRIPT = 'script-src';
     const SCRIPT_ATTR = 'script-src-attr';
@@ -31,6 +33,7 @@ abstract class Directive
     const UPGRADE_INSECURE_REQUESTS = 'upgrade-insecure-requests';
     const WEB_RTC = 'webrtc-src';
     const WORKER = 'worker-src';
+    const REQUIRE_TRUSTED_TYPES = 'require-trusted-types-for';
 
     public static function isValid(string $directive): bool
     {
