@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Csp\Policies;
+namespace OFFLINE\Csp\Policies;
 
-use Spatie\Csp\Directive;
-use Spatie\Csp\Keyword;
+use OFFLINE\Csp\Directive;
+use OFFLINE\Csp\Keyword;
 
 class Basic extends Policy
 {

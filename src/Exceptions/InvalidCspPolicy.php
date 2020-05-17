@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Csp\Exceptions;
+namespace OFFLINE\Csp\Exceptions;
 
 use Exception;
-use Spatie\Csp\Policies\Policy;
+use OFFLINE\Csp\Policies\Policy;
 
 class InvalidCspPolicy extends Exception
 {

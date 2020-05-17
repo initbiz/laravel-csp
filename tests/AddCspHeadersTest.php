@@ -1,18 +1,18 @@
 <?php
 
-namespace Spatie\Csp\Tests;
+namespace OFFLINE\Csp\Tests;
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Support\Facades\Route;
-use Spatie\Csp\AddCspHeaders;
-use Spatie\Csp\Directive;
-use Spatie\Csp\Exceptions\InvalidCspPolicy;
-use Spatie\Csp\Exceptions\InvalidValueSet;
-use Spatie\Csp\Keyword;
-use Spatie\Csp\Policies\Basic;
-use Spatie\Csp\Policies\Policy;
-use Spatie\Csp\Scheme;
-use Spatie\Csp\Value;
+use OFFLINE\Csp\AddCspHeaders;
+use OFFLINE\Csp\Directive;
+use OFFLINE\Csp\Exceptions\InvalidCspPolicy;
+use OFFLINE\Csp\Exceptions\InvalidValueSet;
+use OFFLINE\Csp\Keyword;
+use OFFLINE\Csp\Policies\Basic;
+use OFFLINE\Csp\Policies\Policy;
+use OFFLINE\Csp\Scheme;
+use OFFLINE\Csp\Value;
 use Symfony\Component\HttpFoundation\HeaderBag;
 
 class AddCspHeadersTest extends TestCase

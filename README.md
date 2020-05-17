@@ -1,10 +1,10 @@
 # Set content security policy headers in a Laravel app
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-csp.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-csp)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/spatie/laravel-csp/run-tests?label=tests)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/OFFLINE/laravel-csp.svg?style=flat-square)](https://packagist.org/packages/OFFLINE/laravel-csp)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/OFFLINE/laravel-csp/run-tests?label=tests)
 [![StyleCI](https://styleci.io/repos/119958264/shield?branch=master)](https://styleci.io/repos/119958264)
-[![Quality Score](https://img.shields.io/scrutinizer/g/spatie/laravel-csp.svg?style=flat-square)](https://scrutinizer-ci.com/g/spatie/laravel-csp)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-csp.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-csp)
+[![Quality Score](https://img.shields.io/scrutinizer/g/OFFLINE/laravel-csp.svg?style=flat-square)](https://scrutinizer-ci.com/g/OFFLINE/laravel-csp)
+[![Total Downloads](https://img.shields.io/packagist/dt/OFFLINE/laravel-csp.svg?style=flat-square)](https://packagist.org/packages/OFFLINE/laravel-csp)
 
 By default all scripts on a webpage are allowed to send and fetch data to any site they want. This can be a security problem. Imagine one of your JavaScript dependencies sends all keystrokes, including passwords, to a third party website.
 
@@ -15,13 +15,13 @@ Setting Content Security Policy headers helps solve this problem. These headers 
 This readme does not aim to fully explain all the possible usages of CSP and it's directives. We highly recommend that you read [Mozilla's documentation on the Content Security Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)) before using this package.
 
 If you're an audio visual learner you should check out this video on how to use this package.
-https://www.laraning.com/videos/spatie-csp-content-security-policy
+https://www.laraning.com/videos/OFFLINE-csp-content-security-policy
 
 ## Support us
 
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us). 
+We invest a lot of resources into creating [best in class open source packages](https://OFFLINE.be/open-source). You can support us by [buying one of our paid products](https://OFFLINE.be/open-source/support-us). 
 
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://OFFLINE.be/about-us). We publish all received postcards on [our virtual postcard wall](https://OFFLINE.be/open-source/postcards).
 
 
 ## Installation
@@ -29,13 +29,13 @@ We highly appreciate you sending us a postcard from your hometown, mentioning wh
 You can install the package via composer:
 
 ```bash
-composer require spatie/laravel-csp
+composer require OFFLINE/laravel-csp
 ```
 
 You can publish the config-file with:
 
 ```bash
-php artisan vendor:publish --provider="Spatie\Csp\CspServiceProvider" --tag="config"
+php artisan vendor:publish --provider="OFFLINE\Csp\CspServiceProvider" --tag="config"
 ```
 
 This is the contents of the file which will be published at `config/csp.php`:
@@ -45,9 +45,9 @@ return [
 
     /*
      * A policy will determine which CSP headers will be set. A valid CSP policy is
-     * any class that extends `Spatie\Csp\Policies\Policy`
+     * any class that extends `OFFLINE\Csp\Policies\Policy`
      */
-    'policy' => Spatie\Csp\Policies\Basic::class,
+    'policy' => OFFLINE\Csp\Policies\Basic::class,
 
     /*
      * This policy which will be put in report only mode. This is great for testing out
@@ -71,11 +71,11 @@ return [
     /*
      * The class responsible for generating the nonces used in inline tags and headers.
      */
-    'nonce_generator' => Spatie\Csp\Nonce\RandomString::class,
+    'nonce_generator' => OFFLINE\Csp\Nonce\RandomString::class,
 ];
 ```
 
-You can add CSP headers to all responses of your app by registering `Spatie\Csp\AddCspHeaders::class` in the http kernel.
+You can add CSP headers to all responses of your app by registering `OFFLINE\Csp\AddCspHeaders::class` in the http kernel.
 
 ```php
 // app/Http/Kernel.php
@@ -85,7 +85,7 @@ You can add CSP headers to all responses of your app by registering `Spatie\Csp\
 protected $middlewareGroups = [
    'web' => [
        ...
-       \Spatie\Csp\AddCspHeaders::class,
+       \OFFLINE\Csp\AddCspHeaders::class,
    ],
 ```
  
@@ -93,14 +93,14 @@ Alternatively you can apply the middleware on the route or route group level.
 
 ```php
 // in a routes file
-Route::get('my-page', 'MyController')->middleware(Spatie\Csp\AddCspHeaders::class);
+Route::get('my-page', 'MyController')->middleware(OFFLINE\Csp\AddCspHeaders::class);
 ```
 
 You can also pass a policy class as a parameter to the middleware:
  
 ```php
 // in a routes file
-Route::get('my-page', 'MyController')->middleware(Spatie\Csp\AddCspHeaders::class . ':' . MyPolicy::class);
+Route::get('my-page', 'MyController')->middleware(OFFLINE\Csp\AddCspHeaders::class . ':' . MyPolicy::class);
 ``` 
 
 The given policy will override the one configured in the config file for that specific route or group of routes.
@@ -154,13 +154,13 @@ Content-Security-Policy: upgrade-insecure-requests;block-all-mixed-content
 
 ### Creating policies
 
-In the `policy` key of the `csp` config file is set to `\Spatie\Csp\Policies\Basic::class` by default. This class allows your site to only use images, scripts, form actions of your own site. This is how the class looks like.
+In the `policy` key of the `csp` config file is set to `\OFFLINE\Csp\Policies\Basic::class` by default. This class allows your site to only use images, scripts, form actions of your own site. This is how the class looks like.
 
 ```php
-namespace Spatie\Csp\Policies;
+namespace OFFLINE\Csp\Policies;
 
-use Spatie\Csp\Directive;
-use Spatie\Csp\Value;
+use OFFLINE\Csp\Directive;
+use OFFLINE\Csp\Value;
 
 class Basic extends Policy
 {
@@ -187,8 +187,8 @@ You can allow fetching scripts from `www.google.com` by extending this class:
 ```php
 namespace App\Services\Csp\Policies;
 
-use Spatie\Csp\Directive;
-use Spatie\Csp\Policies\Basic;
+use OFFLINE\Csp\Directive;
+use OFFLINE\Csp\Policies\Basic;
 
 class MyCustomPolicy extends Basic
 {
@@ -298,7 +298,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ### Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you discover any security related issues, please email freek@OFFLINE.be instead of using the issue tracker.
 
 ## Credits
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Csp;
+namespace OFFLINE\Csp;
 
-use Spatie\Csp\Exceptions\InvalidCspPolicy;
-use Spatie\Csp\Policies\Policy;
+use OFFLINE\Csp\Exceptions\InvalidCspPolicy;
+use OFFLINE\Csp\Policies\Policy;
 
 class PolicyFactory
 {

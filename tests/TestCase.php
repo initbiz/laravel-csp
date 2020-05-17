@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Csp\Tests;
+namespace OFFLINE\Csp\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Spatie\Csp\CspServiceProvider;
+use OFFLINE\Csp\CspServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

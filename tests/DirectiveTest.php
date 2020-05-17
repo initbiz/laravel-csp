@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\Csp\Tests;
+namespace OFFLINE\Csp\Tests;
 
-use Spatie\Csp\Directive;
+use OFFLINE\Csp\Directive;
 
 class DirectiveTest extends TestCase
 {

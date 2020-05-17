@@ -1,16 +1,16 @@
 <?php
 
-namespace Spatie\Csp\Policies;
+namespace OFFLINE\Csp\Policies;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use ReflectionClass;
-use Spatie\Csp\Directive;
-use Spatie\Csp\Exceptions\InvalidDirective;
-use Spatie\Csp\Exceptions\InvalidValueSet;
-use Spatie\Csp\Keyword;
-use Spatie\Csp\Value;
+use OFFLINE\Csp\Directive;
+use OFFLINE\Csp\Exceptions\InvalidDirective;
+use OFFLINE\Csp\Exceptions\InvalidValueSet;
+use OFFLINE\Csp\Keyword;
+use OFFLINE\Csp\Value;
 use Symfony\Component\HttpFoundation\Response;
 
 abstract class Policy
@@ -25,10 +25,10 @@ abstract class Policy
      * @param string $directive
      * @param string|array|bool $values
      *
-     * @return \Spatie\Csp\Policies\Policy
+     * @return \OFFLINE\Csp\Policies\Policy
      *
-     * @throws \Spatie\Csp\Exceptions\InvalidDirective
-     * @throws \Spatie\Csp\Exceptions\InvalidValueSet
+     * @throws \OFFLINE\Csp\Exceptions\InvalidDirective
+     * @throws \OFFLINE\Csp\Exceptions\InvalidValueSet
      */
     public function addDirective(string $directive, $values): self
     {

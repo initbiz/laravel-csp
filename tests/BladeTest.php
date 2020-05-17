@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Csp\Tests;
+namespace OFFLINE\Csp\Tests;
 
 class BladeTest extends TestCase
 {

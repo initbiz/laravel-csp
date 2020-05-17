@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Csp\Exceptions;
+namespace OFFLINE\Csp\Exceptions;
 
 use Exception;
 

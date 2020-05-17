@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Csp;
+namespace OFFLINE\Csp;
 
 use ReflectionClass;
 

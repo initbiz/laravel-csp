@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Csp\Nonce;
+namespace OFFLINE\Csp\Nonce;
 
 interface NonceGenerator
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Csp;
+namespace OFFLINE\Csp;
 
 use Illuminate\Support\ServiceProvider;
-use Spatie\Csp\Nonce\NonceGenerator;
+use OFFLINE\Csp\Nonce\NonceGenerator;
 
 class CspServiceProvider extends ServiceProvider
 {
